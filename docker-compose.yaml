@@ -1,0 +1,23 @@
+version: '3.3'
+services:
+  nginx-proxy:
+    image: arm64v8/nginx
+    ports:
+      - "443:443"
+    volumes:
+      -
+        type: bind
+        source: ./config/nginx.conf
+        target: /etc/nginx/conf.d/nginx.conf
+      -
+        type: bind
+        source: ./cert/cert.crt
+        target: /etc/ssl/cert.crt
+      -
+        type: bind
+        source: ./cert/cert.key
+        target: /etc/ssl/cert.key
+      -
+        type: bind
+        source: ./site
+        target: /usr/share/nginx/html
