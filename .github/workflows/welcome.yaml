@@ -1,0 +1,13 @@
+on:
+  issues:
+    types: [ opened ]
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: EddieHubCommunity/gh-action-community/src/welcome@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: '<h1>Благодаря, че сте тук и се интересувате от Spring</h1> За съжаление аз не съм тук и няма да бъда до 10 август. Така че не обещавам да ви отговоря или да ви пише. Извинете ме! :nerd_face:'
+          footer: 'Stay awesome and happy coding! :rocket:'
