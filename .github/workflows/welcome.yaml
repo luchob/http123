@@ -2,12 +2,11 @@ on:
   issues:
     types: [ opened ]
 
-permissions:
-  issues: read
-
 jobs:
   welcome:
     runs-on: ubuntu-latest
+    permissions:
+      issues: read
     steps:
       - uses: EddieHubCommunity/gh-action-community/src/welcome@main
         with:
